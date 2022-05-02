@@ -24,4 +24,36 @@ See following diagram for an overview of what this circuit looks like. (Note the
 
 The BA-4D Sony sets have been successfully modified using the mux method for SCART input as well as BNC. If you choose to use BNC connectors, I recommend purchasing a BNC to S-Video adapter (if your set is one of the larger models, such as KV-27x) or a BNC to RCA adapter for the sync line. This is because it is much easier to use an existing video input on the TV for your RGB's sync signal than installing a 4th BNC line injected to the Y/C Jungle. 
 
-## 
+## Components Needed
+
+For this mod you will need:
+* 3x 2400 Ohm resistors (unless you choose to not use diodes, see next section)
+* 3x 1N4148 Logic diodes (unless you choose to not use diodes, see next section)
+* 3x 430 Ohm resistors
+* 3x 75 Ohm resistors
+* 1 SPDT (single pull, double throw) switch
+* Your choice of adapter for sync line (In my case, I use BNC->S-Video for KV-27S42)
+
+## Modification Steps
+
+In order to implement the mux circuit, we need to remove the existing resistors on the OSD's R, G, and B lines and replace them with the appropriate value resistors that match the diagram above. We will connect our external RGB lines to these new resistors. Also, we need to implement blanking by an external switch. We will pull 5V from the set into the switch and throw it back to the OSD's blanking pin through an appropriate sized resistor. 
+
+___
+
+The basic process is:
+- remove the existing inline throughole resistors R025, R026 and R027
+- replace each of them with a 2K4R and a 1n4148 diode
+- remove surface mount resistors R086, R087 and R088
+- On the external RGB lines use 75R terminations to ground and then 430R inline
+- Connect the external RGB lines to the leg of the diodes closest to the jungle
+- Connect 5V to switch the switch to 1KR and solder after the existing R028 inline resistor on the blanking circuit
+___
+
+
+
+
+## Differences by Model
+
+## Open Questions
+
+
