@@ -1,7 +1,7 @@
 # Sony BA-4D RGB Mod
 ### (KV-27S42, KV-27V42, KV-20M42, KV-13M42, etc)
 
-<img src="https://user-images.githubusercontent.com/41927604/166306640-f9bdade9-1c80-46ad-8329-f599bfd9f642.jpeg" width="600" height ="450" />
+<img src="https://user-images.githubusercontent.com/41927604/166306640-f9bdade9-1c80-46ad-8329-f599bfd9f642.jpeg" width="600" />
 
 
 RGB Mod for Sony BA-4D CRT televisions.
@@ -18,7 +18,7 @@ This mod uses the OSD mux circuit to combine the analog RGB signal produced by t
 
 See following diagram for an overview of what this circuit looks like. (Note these chip names and pins are specific to the Sanyo set. Can be ignored for the purposes of this guide)
 
-<img src="https://user-images.githubusercontent.com/41927604/166302867-327fab37-5817-43e2-9fba-3f42af5b9b40.png" width="800" height="800" />
+<img src="https://user-images.githubusercontent.com/41927604/166302867-327fab37-5817-43e2-9fba-3f42af5b9b40.png" width="800" />
 
 ##### Credit to Syntax and MarkOZLAD
 
