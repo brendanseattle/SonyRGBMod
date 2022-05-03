@@ -41,7 +41,7 @@ For this mod you will need:
 
 ## Modification Steps
 
-In order to implement the mux circuit, we need to remove the existing resistors on the OSD's R, G, and B lines and replace them with the appropriate value resistors that can attenuate our signal to 0.7V. We will connect our external RGB lines to these new resistors. Also, we need to implement blanking by an external switch. We will pull 5V from the set into the switch and throw it to the OSD's blanking pin through an appropriate sized resistor. 
+In order to implement the mux circuit, we need to remove the existing resistors on the OSD's R, G, and B lines and replace them with the appropriate value resistors that can attenuate our signal to 0.7V. We will connect our external RGB lines to these new resistors. Also, we need to implement blanking by an external switch. We will throw 5V from the set to the OSD's blanking pin through an appropriate sized resistor. 
 
 ![Sony-BA-4D---OSD-Mux-Circuit-with-Diodes md](https://user-images.githubusercontent.com/41927604/166327672-9cb0c464-649c-4389-90cd-98dad2a0e45c.png)
 ![Sony-BA-4D---Blanking-via-Switch md](https://user-images.githubusercontent.com/41927604/166327687-a96b2d13-3066-4fde-b11e-3a17121711c9.png)
@@ -91,9 +91,10 @@ If you choose to not use diodes, you can instead use a 330 Ohm resistor (assumin
 
 <img src="https://user-images.githubusercontent.com/41927604/166333815-798be779-aa06-4ee9-aa1b-a84d71050350.png" width="700" />
 
-8. Solder your R028/OSD wire to the middle leg of the SPDT switch. This is where the switch pulls from. Solder your 5V wire to one of the legs, and leave the other leg untouched. This sends the 5V back to the OSD blanking circuit when switched on, and to nothing when switched off.
+8. Solder your R028/OSD wire to the middle leg of the SPDT switch. This is where the switch pulls from. Solder your 5V wire to one of the legs, and leave the other leg untouched. This sends the 5V back to the OSD blanking circuit when switched on, and no additional voltage to existing blanking when switched off.
 
-<img src="https://user-images.githubusercontent.com/41927604/166334322-dc016701-815e-4c95-88f2-1c9d949c1b58.png" width="600" />
+<img src="https://user-images.githubusercontent.com/41927604/166518232-22022dac-21c3-4c0b-9f0f-41e7affccabb.jpg" width="650" />
+
 
 9. Cut into the back case of your set to mount your connectors in a way that suits you. Here's how I ended up doing mine (a second time...) on my KV-27S42. Also for your consideration is /u/Puzzleheaded-Sign-89's implementation with a SCART port.
 
