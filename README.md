@@ -106,6 +106,5 @@ If you choose to not use diodes, you can instead use a 330 Ohm resistor (assumin
 
 The following notes are in no particular order or grouping. These are just some things I encountered while modding that I think are useful to know or look into.
 
-
-
+## Sources and Further Readings
 
