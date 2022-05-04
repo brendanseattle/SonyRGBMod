@@ -41,7 +41,7 @@ For this mod you will need:
 
 ## Modification Steps
 
-In order to implement the mux circuit, we need to remove the existing resistors on the OSD's R, G, and B lines and replace them with the appropriate value resistors that can attenuate our signal to 0.7V. We will connect our external RGB lines to these new resistors. Also, we need to implement blanking by an external switch. We will throw 5V from the set to the OSD's blanking pin through an appropriate sized resistor. 
+In order to implement the mux circuit, we need to remove the existing resistors on the OSD's R, G, and B lines and replace them with the appropriate value resistors that can attenuate our signal to 0.7V. We will connect our external RGB lines to these new resistors. Also, we need to implement blanking by an external switch. We will throw 5V from the set to the OSD blanking line through an appropriate sized resistor. 
 
 ![Sony-BA-4D---OSD-Mux-Circuit-with-Diodes md](https://user-images.githubusercontent.com/41927604/166327672-9cb0c464-649c-4389-90cd-98dad2a0e45c.png)
 ![Sony-BA-4D---Blanking-via-Switch md](https://user-images.githubusercontent.com/41927604/166327687-a96b2d13-3066-4fde-b11e-3a17121711c9.png)
@@ -83,7 +83,7 @@ If you choose to not use diodes, you can instead use a 330 Ohm resistor (assumin
 ![Sony-BA-4D---OSD-Mux-Circuit-without-Diodes](https://user-images.githubusercontent.com/41927604/166330673-f7b23ddd-6a00-4545-b922-f5feee326819.png)
 ##### Credit to MarkOZLAD for formulas
 
-6. Attach another wire to the side of surface mount resistor R028 that connects to a throughhole leg. See schematic and example. This should go through a 1000 Ohm resistor * to match the voltage normally exiting R028. (NOTE: My picture here is the R028 on my KV-13M42, not the KV-27S42 as other pictures. However the location is very similar.)
+6. Attach another wire to the side of surface mount resistor R028 that connects to a throughhole leg. See schematic and example. This should go through a 1000 Ohm resistor * to match the voltage normally exiting R028. (NOTE: My picture here is the R028 on my KV-13M42, not the KV-27S42 in schematic and other pictures. However the location is very similar.)
 
 <img src="https://user-images.githubusercontent.com/41927604/166333113-a9086432-233c-48a7-89d4-f02efbf5337d.png" width="400" /> <img src="https://user-images.githubusercontent.com/41927604/166333424-227c5158-24c2-41ab-bd9c-eb32344989c1.png" width="550" />
 
@@ -95,12 +95,14 @@ If you choose to not use diodes, you can instead use a 330 Ohm resistor (assumin
 
 <img src="https://user-images.githubusercontent.com/41927604/166518232-22022dac-21c3-4c0b-9f0f-41e7affccabb.jpg" width="650" />
 
-
 9. Cut into the back case of your set to mount your connectors in a way that suits you. Here's how I ended up doing mine (a second time...) on my KV-27S42. Also for your consideration is /u/Puzzleheaded-Sign-89's implementation with a SCART port.
 
 <img src="https://user-images.githubusercontent.com/41927604/166334631-6e253c1a-bcd8-4efb-a323-6680b9f56821.jpg" width="450" /> <img src="https://user-images.githubusercontent.com/41927604/166334677-0ad372b6-8e28-482d-9d3c-fa3e8db7b0d1.png" width="450" /> 
 
 ## Differences by Model
+
+* Some models do not have the same resistor labels for the surface mount resistors on the OSD RGB lines. For example, my KV-13M42 has SMD resistors R087, R088, and R089. This is because R086 is only on 13-inch models KV-13M52 and KV-13M53. The resistors should be obvious from their location between the throughhole resistors, however. 
+* On my KV-13M42, adding a 1000 Ohm resistor to the blanking line (which connects to the exiting side of R028) does not actually switch to RGB. User LuckyDay on the shmups forum also confirmed this: https://shmups.system11.org/viewtopic.php?p=1351379#p1351379. For now, I have removed the resistor and blanking to RGB mode works. I will continue to investigate resistance values to make this safer, but so far so good. 
 
 ## Notes, Tips, and Tricks
 
