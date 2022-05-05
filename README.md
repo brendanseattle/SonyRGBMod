@@ -49,7 +49,8 @@ In order to implement the mux circuit, we need to remove the existing resistors 
 ##### Credit to MarkOZLAD
 
 Let's break that down step by step. (Note, sections marked with an asterisk * may have differences by model. Check next section).
-Pictures in steps 1-4 credit John M.
+
+#### Pictures in steps 1-4 credit John M
 
 1. Locate and remove the throughhole resistors R025, R026, and R027 between the Microcontroller (Micon) chip (IC001) and Y/C Jungle chip (IC301).
 
@@ -66,7 +67,7 @@ Pictures in steps 1-4 credit John M.
 
 4. Solder your R, G, and B wires to the leg of the diode closest to the Y/C Jungle (IC301). R025 is red, R026 is green, R027 is blue. 
 
-<img src="https://user-images.githubusercontent.com/41927604/166329959-339a0ddc-960c-416b-ae45-0f653347fddd.png" width="500" />
+<img src="https://user-images.githubusercontent.com/41927604/166978009-f5bf344f-5010-41d9-9406-20a60b305244.png" width="500" />
 
 5. Solder the other side of your RGB wires to a 430 Ohm resistor before reaching your external input (SCART/BNC etc). Terminate to ground by soldering the same end to a 75 Ohm resistor to ground. Here I use the tab on my BNC connectors for ground. 
 
@@ -83,7 +84,7 @@ If you choose to not use diodes, you can instead use a 330 Ohm resistor (assumin
 ![Sony-BA-4D---OSD-Mux-Circuit-without-Diodes](https://user-images.githubusercontent.com/41927604/166330673-f7b23ddd-6a00-4545-b922-f5feee326819.png)
 ##### Credit to MarkOZLAD for formulas
 
-6. Attach another wire to the side of surface mount resistor R028 that connects to a throughhole leg. See schematic and example. This should go through a 1000 Ohm resistor * to match the voltage normally exiting R028. (NOTE: My picture here is the R028 on my KV-13M42, not the KV-27S42 in schematic and other pictures. However the location is very similar.)
+6. Attach another wire to the side of surface mount resistor R028 that leads to D003. See schematic and example. This should go through a 1000 Ohm resistor * to match the voltage normally exiting R028. (NOTE: My picture here is the R028 on my KV-13M42, not the KV-27S42 in schematic and other pictures. However the location is very similar.)
 
 <img src="https://user-images.githubusercontent.com/41927604/166333113-a9086432-233c-48a7-89d4-f02efbf5337d.png" width="400" /> <img src="https://user-images.githubusercontent.com/41927604/166333424-227c5158-24c2-41ab-bd9c-eb32344989c1.png" width="550" />
 
@@ -102,11 +103,17 @@ If you choose to not use diodes, you can instead use a 330 Ohm resistor (assumin
 ## Differences by Model
 
 * Some models do not have the same resistor labels for the surface mount resistors on the OSD RGB lines. For example, my KV-13M42 has SMD resistors R087, R088, and R089. This is because R086 is only on 13-inch models KV-13M52 and KV-13M53. The resistors should be obvious from their location between the throughhole resistors, however. 
-* On my KV-13M42, adding a 1000 Ohm resistor to the blanking line (which connects to the exiting side of R028) does not actually switch to RGB. User LuckyDay on the shmups forum also confirmed this: https://shmups.system11.org/viewtopic.php?p=1351379#p1351379. For now, I have removed the resistor and blanking to RGB mode works. I will continue to investigate resistance values to make this safer, but so far so good. 
+* On my KV-13M42, adding a 1000 Ohm resistor to the blanking line (which connects to the exiting side of R028) does not actually switch to RGB. User LuckyDay on the shmups forum [also confirmed this](https://shmups.system11.org/viewtopic.php?p=1351379#p1351379). For now, I have removed the resistor and blanking to RGB mode works. I have also tried soldering to the entering side of a 680 Ohm SMD resistor and this works for blanking. This is not backed by calculation though, so your mileage may vary. 
 
 ## Notes, Tips, and Tricks
 
 The following notes are in no particular order or grouping. These are just some things I encountered while modding that I think are useful to know or look into.
 
+* I have tried introducing JST-XM connectors to my R, G, and B and blanking lines so that I can disconnect the back case from the motherboard to open up the set. Unfortunately in my case, this introduced video noise that resulted in bowing shaky lines that scrolled down the screen. This is the same interference I found from using poorly shielded small gauge cables. However, /u/Alexz7767 on reddit implemented this to great success and found no interference. He details this method in [the imgur album here](https://imgur.com/gallery/86MwRVT). This is a very cool option to cleanly connect and disconnect your lines, but be warned it may cause video noise as in my experience.
+* It is recommended to use S-Video for sync on the larger models with a digital comb filter. This is because the composite sync shifts the image so far left that you cannot fully put it back with service menu adjustments. In the case of BNC, it's easy enough to use an adapter and feed your sync line through S-Video. If you choose SCART however, you can wire your sync line to the S-Video luma pin, but you will need to have the S-Video "active" circuit closed. One easy way to do this is use a dummy S-Video end plugged into the port.
+* On the smaller models with no S-Video, using composite for sync is fine because there is no digital comb filter. This results in a minimal left shift (same as using S-Video on larger models) which can be adjusted through service menu. Tested on KV-13M42. 
+
 ## Sources and Further Readings
 
+* [MarkOZLAD's initial post on shmups RGB mod thread](https://shmups.system11.org/viewtopic.php?p=1342960#p1342960)
+* [John M's post in CRT Collective Facebook Group](https://www.facebook.com/groups/444560212348840/posts/1087787041359484) with details and questions in the comments
