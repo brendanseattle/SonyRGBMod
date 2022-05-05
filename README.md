@@ -9,8 +9,7 @@ RGB Mod for Sony BA-4D CRT televisions.
 Written by Brendan Eddy (FlyingFlygon). Credits to:
 * MarkOZLAD for method and diagrams
 * Syntax for method
-* John M for installation pictures
-* Puzzleheaded-Sign-89 for installation pictures
+* John M, /u/Puzzleheaded-Sign-89, and /u/Alexz7767 for installation pictures
 
 ## Overview
 
