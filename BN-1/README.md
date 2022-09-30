@@ -10,7 +10,7 @@ Written by Brendan Eddy (FlyingFlygon). Credits to:
 
 ## Overview
 
-This RGB mod is noteworthy because it is _not_ a mux mod - meaning we are not going to be multiplexing our external RGB signal with the set's OSD RGB input. Instead, we can simply input our RGB singal to the Y/C jungle integrated circuit (IC301 CXA1465AS) directly. This is possible due to the jungle having unpopulated pins for RGB input and blanking. So the mod ends up being as simple as plugging your lines directly into those pins.
+This RGB mod is noteworthy because it is _not_ a mux mod - meaning we are not going to be multiplexing our external RGB signal with the set's OSD RGB input. Instead, we can simply input our RGB signal to the Y/C jungle integrated circuit (IC301 CXA1465AS) directly. This is possible due to the jungle having unpopulated pins for RGB input and blanking. So the mod ends up being as simple as plugging your lines directly into those pins.
 
 ![YCJungle](https://user-images.githubusercontent.com/41927604/193158816-3feb0990-86c8-4f46-a845-07bf3442c835.jpg)
 
@@ -59,7 +59,7 @@ Route your wire from this transistor up to the input section of the case. You ca
 
 <img src="https://user-images.githubusercontent.com/41927604/193159948-dd6a86bd-7d1c-438a-a6c6-922ee56db664.jpg" width="400" /> <img src="https://user-images.githubusercontent.com/41927604/193159953-63cf9cf7-3c17-4393-85f0-a0f9d3b6fe72.jpg" width="300" /> <img src="https://user-images.githubusercontent.com/41927604/193159957-479fc526-0da6-4721-b6de-03d3620d99d4.jpg" width="200" />
 
-7. Your blanking circuit will involve the wire to pin 15 (yellow in my case) and the wire to the 5V regulator (white in my case). The 5V line will be the center pull of your switch, while the blanking line will be one of the throws. The other throw can be left unpopulated or sent to ground if you really care about safety. I read the voltage of the regulator and it came to about 5.6V, so I attenuated it with two 1k Ohm resistors to bring it down to a level I am more comfortable with. Honestly, I could have brought it down even more. Feel free to experiment with this and find what works best. 
+7. Your blanking circuit will involve the wire to pin 15 (yellow in my case) and the wire to the 5V regulator (white in my case). The 5V line will be the center pull of your switch, while the blanking line will be one of the throws. The other throw can be left unpopulated or sent to ground if you really care about safety. I measured the voltage of the regulator and it came to about 5.6V, so I attenuated it with two 1k Ohm resistors to bring it down to a level I am more comfortable with. Honestly, I could have brought it down even more. Feel free to experiment with this and find what works best. 
 
 <img src="https://user-images.githubusercontent.com/41927604/193160395-74433892-5712-4b95-b0b7-36685d33e364.jpg" width="500" />
 
@@ -73,7 +73,7 @@ Next, you can solder the coupling capacitors and attach the 75 Ohm resistors to 
 
 <img src="https://user-images.githubusercontent.com/41927604/193161706-4dc0531d-2eb9-48f7-b8a2-85d2dc5d1535.jpg" width="500" />
 
-Lastly, connect your red, green, and blue wires to each and test with your console. If everything looks good, disconnect the terminating resistors and the RGB lines so you can insert the BNC connectors into the case (step TODO). 
+Lastly, connect your red, green, and blue wires to each and test with your console. (I have no picture of testing). If everything looks good, disconnect the terminating resistors and the RGB lines so you can insert the BNC connectors into the case (step 10). 
 
 9. Case modification will always be up to personal preference. In my opinion, I'm not too worried about cutting holes as long as it doesn't make a huge impact. For this reason I decided the rear corner of the case is an alright solution. I used a small drillbit to outline the circles for the BNC connectors, and a file to smooth it out. Same for the switch hole.
 
@@ -106,4 +106,4 @@ Finally, we can connect both ends of the mod and reassemble the set.
 * SCART port RGB mods are popular as a lot of RGB equipment utilizes SCART, but I would find it nearly impossible to fit such a large port anywhere on this tiny case. That's why I opted for the small cluster of BNC connectors in the back corner. 
 
 ## Sources and Further Readings
-* Stabarz' RGB mod for KV-13TR29 (etc) models: https://imgur.com/a/Cq2Yngd
+* Stabarz' RGB mod for KV-13TR29 (etc) models, which uses the same jungle chip: https://imgur.com/a/Cq2Yngd
