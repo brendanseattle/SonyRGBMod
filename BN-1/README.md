@@ -1,5 +1,5 @@
 # Sony BN-1 RGB Mod
-### (KV-9PT50, KV-9PT60)
+### (KV-9PT50, KV-9PT60, etc)
 
 <img src="https://user-images.githubusercontent.com/41927604/193102948-0b21a97f-89a2-4627-aa30-4a912703e66b.jpg" width="600" />
 
@@ -35,13 +35,17 @@ This mod will be done in three distinct but related parts: wiring the RGB and gr
 
 <img src="https://user-images.githubusercontent.com/41927604/193157514-56513f1a-40bf-4d95-9d35-b5086b38ab3f.jpg" width="400" />
 
-2. Solder a wire to a 5V source on the board. There are likely many places you can do so. I chose a leg of the Q607 transistor as the schematic states it outputs into the Set 5V circuit. Route your wire from this transistor up to the input section of the case. You can poke it through some small holes near the tuner to keep it snug.
+2. Solder a wire to a 5V source on the board. There are likely many places you can do so. I chose a leg of the Q607 transistor as the schematic states it outputs into the Set 5V circuit.
 
-<img src="https://user-images.githubusercontent.com/41927604/193157941-091ce4cb-1742-4c9f-9930-64bc573fac64.png" width="300" /> <img src="https://user-images.githubusercontent.com/41927604/193157870-e50dc64c-445d-462c-98d9-ccc02f1acf59.jpg" width="300" /> <img src="https://user-images.githubusercontent.com/41927604/193157876-3e5c09ed-579b-4468-9cb5-5d98dc6f0be0.jpg" width="300" /> 
+<img src="https://user-images.githubusercontent.com/41927604/193157941-091ce4cb-1742-4c9f-9930-64bc573fac64.png" width="300" />
+
+Route your wire from this transistor up to the input section of the case. You can poke it through some small holes near the tuner to keep it snug.
+
+<img src="https://user-images.githubusercontent.com/41927604/193157870-e50dc64c-445d-462c-98d9-ccc02f1acf59.jpg" width="500" /> <img src="https://user-images.githubusercontent.com/41927604/193157876-3e5c09ed-579b-4468-9cb5-5d98dc6f0be0.jpg" width="300" /> 
 
 3. Solder a wire to an audio/video ground pin and route it the same way.
 
-<img src="https://user-images.githubusercontent.com/41927604/193158677-2a422a02-66e4-424e-940b-b2fd156967e6.jpg" width="400" />
+<img src="https://user-images.githubusercontent.com/41927604/193158677-2a422a02-66e4-424e-940b-b2fd156967e6.jpg" width="500" />
 
 4. Identify and cut pins 15, 16, 17, and 18 of the Y/C Jungle chip (IC301 CXA1465AS). Alternatively, you can cut the traces on the other side or figure out a circuit to ensure the signal doesn't get grounded, but I just do the easy way and cut the pins.
 
@@ -59,12 +63,46 @@ This mod will be done in three distinct but related parts: wiring the RGB and gr
 
 <img src="https://user-images.githubusercontent.com/41927604/193160395-74433892-5712-4b95-b0b7-36685d33e364.jpg" width="500" />
 
-8. 
+8. Prepare your BNC connectors for the RGB line connection. This will involve the coupling capacitors, the terminating resistors, and attaching the ground line to the tabs of the connectors. I recommend you do this all before modifying the case so that you can test the mod first. 
 
+Start with the ground tabs. I daisy chain them together with small wires, and connect one of them to the ground point we connected earlier (black wire). Also solder in the 75 Ohm resistors.
+
+<img src="https://user-images.githubusercontent.com/41927604/193162625-3c7ee8ea-a971-406e-a081-3598d332fe08.jpg" width="500" />
+
+Next, you can solder the coupling capacitors and attach the 75 Ohm resistors to the video line.
+
+<img src="https://user-images.githubusercontent.com/41927604/193161706-4dc0531d-2eb9-48f7-b8a2-85d2dc5d1535.jpg" width="500" />
+
+Lastly, connect your red, green, and blue wires to each and test with your console. If everything looks good, disconnect the terminating resistors and the RGB lines so you can insert the BNC connectors into the case (step TODO). 
+
+9. Case modification will always be up to personal preference. In my opinion, I'm not too worried about cutting holes as long as it doesn't make a huge impact. For this reason I decided the rear corner of the case is an alright solution. I used a small drillbit to outline the circles for the BNC connectors, and a file to smooth it out. Same for the switch hole.
+
+<img src="https://user-images.githubusercontent.com/41927604/193163294-64b521fa-092f-464f-9d7f-6a006ebf4617.jpg" width="400" />
+
+10. Once you have decided on placement, you can install the switch and BNCs. If there's a snug enough fit, it should just be a matter of screwing them in. I opted to add some hot glue as well because my fitment wasn't perfect.
+
+<img src="https://user-images.githubusercontent.com/41927604/193163726-9642f9d2-10ec-4ffd-8044-153e94c9f2bb.jpg" width="400" />
+
+Once you have a tight fit, go ahead and resolder the 75 Ohm resistors to the video lines. 
+
+<img src="https://user-images.githubusercontent.com/41927604/193163937-7566133c-8a33-4c8f-9915-66a0af26c10d.jpg" width="400" />
+
+The last step is to resolder the RGB lines to the coupling capacitors. This is where having quick connectors is handy since you can move the case around and twist the wires as needed. 
+
+<img src="https://user-images.githubusercontent.com/41927604/193164071-65ae8138-864e-41b1-b1f8-cad0b6ca8c4c.jpg" width="400" />
+
+Finally, we can connect both ends of the mod and reassemble the set.
+
+<img src="https://user-images.githubusercontent.com/41927604/193164143-f15c8c7a-ec3e-44a0-b5df-d91af6fdf05e.jpg" width="600" />
 
 ## Differences by Model
 
+* The PT60 model is the higher-end of the two, with a larger power supply block sticking out from the board and a power cable that can be disconnected. I recommend disconnecting the cable as it makes maneuvering in a tight spot easier. But the rest of the mod is the same. 
+
 ## Notes, Tips, and Tricks
+
+* Sync should be sent directly into the composite video port. If your cables are 4 BNC (one each for red, green, blue, and sync) you'll want to get a BNC to RCA adapter to be able to plug your sync line into the stock composite port. 
+* SCART port RGB mods are popular as a lot of RGB equipment utilizes SCART, but I would find it nearly impossible to fit such a large port anywhere on this tiny case. That's why I opted for the small cluster of BNC connectors in the back corner. 
 
 ## Sources and Further Readings
 * Stabarz' RGB mod for KV-13TR29 (etc) models: https://imgur.com/a/Cq2Yngd
