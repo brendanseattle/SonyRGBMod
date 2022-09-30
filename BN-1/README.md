@@ -102,6 +102,7 @@ Finally, we can connect both ends of the mod and reassemble the set.
 ## Notes, Tips, and Tricks
 
 * Sync should be sent directly into the composite video port. If your cables are 4 BNC (one each for red, green, blue, and sync) you'll want to get a BNC to RCA adapter to be able to plug your sync line into the stock composite port. 
+* Since composite is used for sync, there will be a small amount of left-shift in the image. You can enter the service menu and increase HPOS setting to account for this. _If the HPOS is at max and the image is still not centered,_ you can reduce the HFRQ setting to shift it some more. This should be the second option, as frequency should ideally be in the 70-80 range. But it should be fine lower.
 * SCART port RGB mods are popular as a lot of RGB equipment utilizes SCART, but I would find it nearly impossible to fit such a large port anywhere on this tiny case. That's why I opted for the small cluster of BNC connectors in the back corner. 
 
 ## Sources and Further Readings
