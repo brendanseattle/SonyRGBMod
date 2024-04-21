@@ -73,7 +73,7 @@ ___
 
 <img src="https://user-images.githubusercontent.com/41927604/193159948-dd6a86bd-7d1c-438a-a6c6-922ee56db664.jpg" width="400" /> <img src="https://user-images.githubusercontent.com/41927604/193159953-63cf9cf7-3c17-4393-85f0-a0f9d3b6fe72.jpg" width="300" /> <img src="https://user-images.githubusercontent.com/41927604/193159957-479fc526-0da6-4721-b6de-03d3620d99d4.jpg" width="200" />
 
-7. Your blanking circuit will involve the wire to pin 15 (yellow in my case) and the wire to the 5V regulator (white in my case). The 5V line will be the center pull of your switch, while the blanking line will be one of the throws. The other throw can be left unpopulated or sent to ground if you really care about safety. I measured the voltage of the regulator and it came to about 5.6V, so I attenuated it with two 1k Ohm resistors to bring it down to a level I am more comfortable with. Honestly, I could have brought it down even more. Feel free to experiment with this and find what works best. 
+7. Your blanking circuit will involve the wire to pin 15 (yellow in my case) and the wire to the 5V regulator (white in my case). The 5V line will be the center pull of your switch, while the blanking line will be one of the throws. The other throw can be left unpopulated. I measured the voltage of the regulator and it came to about 5.6V, so I attenuated it with two 1k Ohm resistors to bring it down to a level I am more comfortable with. Honestly, I could have brought it down even more. Feel free to experiment with this and find what works best. 
 
 <img src="https://user-images.githubusercontent.com/41927604/193160395-74433892-5712-4b95-b0b7-36685d33e364.jpg" width="500" />
 
